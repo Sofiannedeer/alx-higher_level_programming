@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for letter in range(97, 123):
-if chr(letter) is not '101' and chr(letter) is not '113':
-continue
-print(chr(letter).format(), end="")
+for i in range(97, 123):
+    if i == 101 or i == 113:
+        continue
+    print("{}".format(chr(i)), end="")
