@@ -1,14 +1,24 @@
 #!/usr/bin/python3
-# 6-print_matrix_integer.py
-# Brennan D Baraban <375@holbertonschool.com>
-
-
 def print_matrix_integer(matrix=[[]]):
-    """Print a matrix of integers."""
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-                print("{:d}".format(matrix[i][j]), end="")
-                if j != (len(matrix[i]) - 1):
-                    print(" ", end="")
+    """Prints a matrix of integers
 
-        print("")
+    Args:
+        matrix: a matrix
+    """
+
+    # If no argument is supplied print a newline
+    if not matrix:
+        print()
+    else:
+        # Loop through the rows
+        for row in matrix:
+            # Loop through the items in row
+            for item in row:
+                # Add space between items if not last item in row
+                if row.index(item) != len(row) - 1:
+                    endspace = " "
+                else:
+                    endspace = ""
+                # Print the items in the row
+                print("{:d}".format(item), end=endspace)
+            print()
